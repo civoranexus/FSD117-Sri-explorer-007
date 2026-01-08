@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civora Nexus - Verification System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        civora: {
+                            nav: "#002b5c",
+                            primary: "#00a3e0",
+                            secondary: "#005a8d",
+                            accent: "#00b2a9",
+                            success: "#28a745",
+                            error: "#dc3545",
+                            warning: "#ffc107",
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-civora-nav text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 font-bold text-xl tracking-wider flex items-center gap-2">
+                        <i data-lucide="shield-check" class="text-civora-primary"></i>
+                        CIVORA NEXUS
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#vendor" class="hover:bg-civora-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Vendor</a>
+                        <a href="#admin" class="hover:bg-civora-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Admin</a>
+                        <a href="#scan" class="bg-civora-primary hover:bg-cyan-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2">
+                            <i data-lucide="qr-code" class="w-4 h-4"></i> Scan Code
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-civora-secondary inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-civora-nav focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#vendor" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-civora-secondary">Vendor</a>
+                <a href="#admin" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-civora-secondary">Admin</a>
+                <a href="#scan" class="block px-3 py-2 rounded-md text-base font-medium bg-civora-primary hover:bg-cyan-600">Scan Code</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-civora-nav to-civora-secondary py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Connecting Citizens Through <br class="hidden sm:block" />
+                <span class="text-civora-primary">Intelligent Innovation</span>
+            </h1>
+            <p class="mt-4 text-xl text-blue-100 max-w-3xl mx-auto mb-10 font-light">
+                Secure, verifiable, and transparent product authentication powered by cryptographic QR technology. 
+                Ensuring trust between vendors and consumers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="alert('Scan functionality would open camera here.')" class="bg-civora-primary hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i data-lucide="scan-line"></i> Verify Product
+                </button>
+                <button onclick="alert('Opening Login Modal...')" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="user-circle"></i> Vendor Login
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-civora-nav">Key Features</h2>
+                <p class="mt-2 text-gray-600 text-lg">Built for security, reliability, and ease of use.</p>
+                <div class="w-24 h-1 bg-civora-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group hover:-translate-y-2">
+                    <div class="mb-4 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="text-civora-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Secure Verification</h3>
+                    <p class="text-gray-600">Cryptographically secure QR codes prevent counterfeiting and ensure product authenticity.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group hover:-translate-y-2">
+                    <div class="mb-4 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="qr-code" class="text-civora-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Smart Generation</h3>
+                    <p class="text-gray-600">Vendors can generate unique batch-linked QR codes instantly using our advanced algorithm.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group hover:-translate-y-2">
+                    <div class="mb-4 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="smartphone" class="text-civora-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Scanning</h3>
+                    <p class="text-gray-600">Consumer-friendly mobile interface for instant product verification anywhere, anytime.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group hover:-translate-y-2">
+                    <div class="mb-4 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="database" class="text-civora-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Real-time Database</h3>
+                    <p class="text-gray-600">Immediate validation against our central secure database for up-to-the-second accuracy.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group hover:-translate-y-2">
+                    <div class="mb-4 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="check-circle" class="text-civora-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">User Friendly</h3>
+                    <p class="text-gray-600">Clear Green/Red indicators for Valid/Invalid products eliminate ambiguity for users.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 bg-gray-50 group hover:-translate-y-2">
+                    <div class="mb-4 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="text-civora-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Role-Based Access</h3>
+                    <p class="text-gray-600">Dedicated portals for Admins, Vendors, and Verifiers to manage their specific workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gray-50 py-16 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+           <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to secure your supply chain?</h2>
+           <p class="text-gray-600 mb-8 text-lg">Join the Civora Nexus network today and protect your brand.</p>
+           <button class="bg-civora-nav hover:bg-blue-900 text-white font-bold py-3 px-10 rounded-full shadow-md transition-all">
+             Get Started
+           </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-civora-nav text-blue-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">Civora Nexus</h3>
+                <p class="text-sm opacity-80">Connecting Citizens Through Intelligent Innovation.</p>
+                <p class="text-sm opacity-80 mt-2">&copy; 2026 Civora Nexus Pvt. Ltd.</p>
+            </div>
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:text-white hover:underline">Contact Support</a></li>
+                    <li><a href="#" class="hover:text-white hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">Contact</h3>
+                <p class="text-sm opacity-80">123 innovation Drive<br>Tech City, TC 90210</p>
+                <p class="text-sm opacity-80 mt-2">support@civoranexus.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
