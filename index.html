@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere | Premium Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for premium icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <div class="weather-card">
+            <!-- Search Section -->
+            <div class="search-box">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" id="city-input" placeholder="Search for a city..." autocomplete="off">
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message hidden" id="error-message">
+                <ion-icon name="alert-circle-outline"></ion-icon>
+                <p>City not found. Please try again.</p>
+            </div>
+
+            <div class="loading hidden" id="loading">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Weather Content -->
+            <div class="weather-content hidden" id="weather-content">
+                <div class="current-weather">
+                    <h2 class="city-name" id="city-name">San Francisco</h2>
+                    <p class="date" id="current-date">Monday, 16 Oct</p>
+                </div>
+
+                <div class="temp-container">
+                    <div class="weather-icon-container">
+                        <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@4x.png" alt="Weather Icon">
+                    </div>
+                    <h1 class="temperature" id="temperature">24<span class="unit">°C</span></h1>
+                    <p class="description" id="description">Clear Sky</p>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <ion-icon name="water-outline"></ion-icon>
+                        <div class="detail-info">
+                            <span class="value" id="humidity">45%</span>
+                            <span class="label">Humidity</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <ion-icon name="speedometer-outline"></ion-icon>
+                        <div class="detail-info">
+                            <span class="value" id="wind-speed">12 km/h</span>
+                            <span class="label">Wind Speed</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <ion-icon name="thermometer-outline"></ion-icon>
+                        <div class="detail-info">
+                            <span class="value" id="feels-like">26°C</span>
+                            <span class="label">Feels Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Initial State / Placeholder -->
+            <div class="initial-state" id="initial-state">
+                <ion-icon name="cloudy-night-outline" class="large-icon"></ion-icon>
+                <p>Enter a city to explore the weather</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
